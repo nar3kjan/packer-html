@@ -30,11 +30,11 @@ jobs:
           working_directory: .
 
 
-      - name: Emit repository_dispatch
-        uses: mvasigh/dispatch-action@main
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v2
         with:
-          # You should create a personal access token and store it in your repository
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          repo: nar3kjan/terraform-s3-remote
-          owner: mvasigh
-          event_type: sample_push
+          repository: nar3kjan/terraform-s3-remote
+
+          event-type: my-event
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
