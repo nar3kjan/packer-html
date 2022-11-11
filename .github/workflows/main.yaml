@@ -29,3 +29,15 @@ jobs:
           target: project.json
           working_directory: .
 
+
+      - name: Dispatch submodule_push event
+        uses: mvasigh/dispatch-action@main
+        with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          repo: 'nar3kjan/terraform-s3-remote'
+          event_type: submodule_push
+          message: |
+            {
+              "foo": "bar"
+            }
+
