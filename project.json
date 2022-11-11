@@ -3,7 +3,7 @@
         {
             "type": "amazon-ebs",
             "region": "us-east-1",
-            "ami_name": "ubuntu-nginx",
+            "ami_name": "ubuntu-nginx-${date}",
             "source_ami_filter": {
                 "filters": {
                   "virtualization-type": "hvm",
