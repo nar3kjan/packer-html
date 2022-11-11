@@ -30,14 +30,11 @@ jobs:
           working_directory: .
 
 
-      - name: Dispatch submodule_push event
+      - name: Emit repository_dispatch
         uses: mvasigh/dispatch-action@main
         with:
+          # You should create a personal access token and store it in your repository
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          repo: 'nar3kjan/terraform-s3-remote'
-          event_type: submodule_push
-          message: |
-            {
-              "foo": "bar"
-            }
-
+          repo: nar3kjan/terraform-s3-remote
+          owner: mvasigh
+          event_type: sample_push
