@@ -34,7 +34,7 @@ jobs:
         uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          repository: nar3kjan/terraform-s3-remote
+          repository: nar3kjan/terraform-modules
 
           event-type: my-event
           client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
